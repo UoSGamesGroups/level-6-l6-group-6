@@ -80,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
     void Look()
     {
+        if (!Cursor.visible)
+        {
         Vector2 mouseIn = Vector2.right * Input.GetAxis("Mouse X") + Vector2.up * Input.GetAxis("Mouse Y");
         mouseIn *= mouseSense;
         transform.Rotate(Vector3.up, mouseIn.x);
@@ -91,6 +93,7 @@ public class PlayerController : MonoBehaviour
         targetRotation = MouseLook.ClampRotationAroundXAxis(targetRotation, -90, 90);
 
         _Camera.localRotation = targetRotation;
+        }
         CheckCursorLock();
     }
 
