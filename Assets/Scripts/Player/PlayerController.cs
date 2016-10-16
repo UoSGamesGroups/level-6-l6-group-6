@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     private Transform _Camera;
 
     //private const float accelWalk = 30;
-    private const float moveSpeedWalk = 5f;
-    private const float moveSpeedRun = 10f;
+    private const float moveSpeedWalk = 2f;
+    private const float moveSpeedRun = 4f;
     private const float mouseSense = 3f;
 
     // Use this for initialization
