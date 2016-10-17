@@ -1,16 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LightFlicker : MonoBehaviour {
-
-    float initialIntensity;
+public class LightFlicker : MonoBehaviour
+{
     bool triggered = false;
-
-	// Use this for initialization
-	void Start ()
-    {
-        initialIntensity = GetComponent<Light>().intensity;
-	}
 	
 	// Update is called once per frame
 	void Update ()
