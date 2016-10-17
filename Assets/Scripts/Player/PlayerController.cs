@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CapsuleCollider))]
+//[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     public enum ControlState
@@ -13,7 +12,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private ControlState controlState = ControlState.Free;
-    private Rigidbody _Rigidbody;
+
+    private CharacterController _CharacterController;
     private Transform _Camera;
 
     //private const float accelWalk = 30;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _Rigidbody = GetComponent<Rigidbody>();
+        _CharacterController = GetComponent<CharacterController>();
         _Camera = transform.GetChild(0);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,24 +57,26 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                _Rigidbody.velocity += input * moveSpeedRun;
-                if (_Rigidbody.velocity.magnitude > moveSpeedRun)
-                {
-                    _Rigidbody.velocity = _Rigidbody.velocity.normalized * moveSpeedRun;
-                }
+                _CharacterController.SimpleMove(input * moveSpeedRun);
+                //_Rigidbody.velocity += input * moveSpeedRun;
+                //if (_Rigidbody.velocity.magnitude > moveSpeedRun)
+                //{
+                //    _Rigidbody.velocity = _Rigidbody.velocity.normalized * moveSpeedRun;
+                //}
             }
             else
             {
-                _Rigidbody.velocity += (input * moveSpeedWalk);
-                if (_Rigidbody.velocity.magnitude > moveSpeedWalk)
-                {
-                    _Rigidbody.velocity = _Rigidbody.velocity.normalized * moveSpeedWalk;
-                }
+                _CharacterController.SimpleMove(input * moveSpeedWalk);
+                //_Rigidbody.velocity += (input * moveSpeedWalk);
+                //if (_Rigidbody.velocity.magnitude > moveSpeedWalk)
+                //{
+                //    _Rigidbody.velocity = _Rigidbody.velocity.normalized * moveSpeedWalk;
+                //}
             }
         }
         else
         {
-            _Rigidbody.velocity = -_Rigidbody.velocity / moveSpeedRun;
+            //_Rigidbody.velocity = -_Rigidbody.velocity / moveSpeedRun;
         }
     }
 
