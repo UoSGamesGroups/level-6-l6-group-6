@@ -50,33 +50,19 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         Vector3 input = transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal");
+        input.Normalize();
 
-        if (input != Vector3.zero)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            input.Normalize();
-
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                _CharacterController.SimpleMove(input * moveSpeedRun);
-                //_Rigidbody.velocity += input * moveSpeedRun;
-                //if (_Rigidbody.velocity.magnitude > moveSpeedRun)
-                //{
-                //    _Rigidbody.velocity = _Rigidbody.velocity.normalized * moveSpeedRun;
-                //}
-            }
-            else
-            {
-                _CharacterController.SimpleMove(input * moveSpeedWalk);
-                //_Rigidbody.velocity += (input * moveSpeedWalk);
-                //if (_Rigidbody.velocity.magnitude > moveSpeedWalk)
-                //{
-                //    _Rigidbody.velocity = _Rigidbody.velocity.normalized * moveSpeedWalk;
-                //}
-            }
+            _CharacterController.SimpleMove(input * moveSpeedRun);
         }
         else
         {
-            //_Rigidbody.velocity = -_Rigidbody.velocity / moveSpeedRun;
+            _CharacterController.SimpleMove(input * moveSpeedWalk);
+        }
+        if (!_CharacterController.isGrounded)
+        {
+            _CharacterController.Move(Vector3.zero);
         }
     }
 
