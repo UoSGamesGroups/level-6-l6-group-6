@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ScriptedScamper : MonoBehaviour {
@@ -6,7 +6,7 @@ public class ScriptedScamper : MonoBehaviour {
     public Light[] lights;
     public GameObject trigger;
 
-    private bool triggered = false;
+    //private bool triggered = false;
     private Animator _Animator;
 
 	// Use this for initialization
