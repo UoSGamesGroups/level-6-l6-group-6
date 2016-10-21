@@ -1,16 +1,22 @@
 # Props
+
 ## Hardware
+
 - [ ] Tools
 - [ ] Fuses (1920?)
 - [ ] Toolboxes
 - [ ] Steam Batteries
 - [ ] Bolts
+
 ## Stationary
+
 - [ ] Posters
 - [ ] Notebooks
 - [ ] Papers
 - [ ] Calanders
+
 ## Furnature
+
 - [ ] Table
 - [ ] Chairs
 - [ ] Cupboards
@@ -18,7 +24,9 @@
 - [ ] Clocks
 - [ ] Lamps
 - [ ] Striplights (1920?) _oil lamps_
+
 ## Generic
+
 - [ ] Gore / Body parts
 - [ ] Clothing
 - [ ] Life Jackets
@@ -34,6 +42,7 @@
 ---
 
 ## Notes
+
  Keep this List updated as you add more props and complete them.
 
  To mark a box as ticked:
