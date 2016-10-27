@@ -10,11 +10,6 @@ AMyCharacter::AMyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	speedWalk = 1.0f;
-	speedRun = 8.0f;
-
-	run = false;
-
 }
 
 void AMyCharacter::MoveForward(float AxisValue)
@@ -65,6 +60,11 @@ void AMyCharacter::Walk()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	speedWalk = 1.0f;
+	speedRun = 8.0f;
+
+	run = false;
 	
 }
 
