@@ -1,3 +1,4 @@
 .\Assets filter=lfs diff=lfs merge=lfs -text
 .\Assets\Audio\_aup filter=lfs diff=lfs merge=lfs -text
 .\Unreal_IceBreaker\Content\Levels\ filter=lfs diff=lfs merge=lfs -text
+Builds/ filter=lfs diff=lfs merge=lfs -text
